@@ -1,0 +1,27 @@
+<p-gmap [options]="options" [style]="{'width':'100%','height':'320px'}"
+[overlays]="overlays"
+        (onMapClick)="handleMapClick($event)"></p-gmap>
+
+<p-dialog [(visible)]="display" header="Station Service">
+
+
+  <div class="ui-g ui-fluid" >
+    <div class="ui-g-2"><label for="title">Station</label></div>
+    <div class="ui-g-10"><input type="text" pInputText id="title" [(ngModel)]="station.nom"></div>
+
+    <div class="ui-g-2"><label for="lat">Latitude</label></div>
+    <div class="ui-g-10"><input id="lat" type="text" readonly pInputText [ngModel]="station.latitude"></div>
+
+    <div class="ui-g-2"><label for="lng">Longitude</label></div>
+    <div class="ui-g-10"><input id="lng" type="text" readonly pInputText [ngModel]="station.longitude"></div>
+
+
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton label="Add Marker" icon="fa-plus" (click)="ajouter()"></button>
+    </div>
+  </p-footer>
+
+
+</p-dialog>

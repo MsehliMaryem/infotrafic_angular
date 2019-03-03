@@ -8,4 +8,7 @@ export class Station {
       longitude : number;
 
       typeStation :TypeStation;
+
+
+
 }

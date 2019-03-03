@@ -4,11 +4,12 @@ import {TypeStation} from '../../model/type-station';
 import {ConfirmationService, MenuItem, MessageService} from 'primeng/api';
 import {StringResponse} from '../../model/string-response';
 
+
 @Component({
   selector: 'app-type-station',
   templateUrl: './type-station.component.html',
-  styleUrls: ['./type-station.component.css'],
-    providers:[TypeStationService]
+  styleUrls: ['./type-station.component.css']
+
 })
 export class TypeStationComponent implements OnInit {
   typeStations : TypeStation[] = new Array();
@@ -129,7 +130,8 @@ export class TypeStationComponent implements OnInit {
     edit(type :TypeStation){
       this.display=true;
       this.updated=true;
-      this.typeStation = this.cloneType(type);
+      this.typeStation = this.cloneType(type)  ;
+
     }
 
 
@@ -138,11 +140,14 @@ export class TypeStationComponent implements OnInit {
     this.updated=false;
   }
   cloneType(c: TypeStation): TypeStation {
-    const type = {};
+
     for (const prop of Object.keys(c))  {
       this.typeStation[prop] = c[prop];
     }
     return this.typeStation;
   }
 
+
+
 }
+

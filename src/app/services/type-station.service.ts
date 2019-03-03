@@ -4,7 +4,9 @@ import {Observable} from 'rxjs';
 import {TypeStation} from '../model/type-station';
 import {StringResponse} from '../model/string-response';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TypeStationService {
 
     private baseUrl  = "http://localhost:9090/typeStation";

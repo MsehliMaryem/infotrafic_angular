@@ -1,0 +1,36 @@
+<button type="button" (click)="showDialog()" pButton icon="pi pi-plus-circle" label="Ajouter"></button>
+
+
+<p-table [value]="typeAlertes" [contextMenu]="cm" [(contextMenuSelection)]="selectedTypeALerte">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Type Alerte</th>
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-type>
+    <tr [pContextMenuRow]="type">
+      <td>{{type.nom}}</td>
+
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog header="Type Alerte" [(visible)]="display" [style]="{'width':'400px'}">
+  <div class="ui-g">
+    <div class="ui-g-4">Libelle</div>
+    <div class="ui-g-4">
+      <input required [(ngModel)]="typeAlerte.nom" #nom="ngModel">
+    </div>
+  </div>
+  <p-footer>
+
+    <button *ngIf="!updated" pButton label="Ajouter" (click)="ajouter()" [disabled]="!nom.valid" ></button>
+    <button *ngIf="updated" pButton label="Modifier" (click)="modifier()" [disabled]="!nom.valid" ></button>
+    <button pButton label="Annuler" (click)="display=false" ></button>
+  </p-footer>
+
+
+</p-dialog>
+<p-contextMenu #cm [model]="items"></p-contextMenu>
+

@@ -16,7 +16,7 @@
   </ng-template>
 </p-table>
 
-<p-dialog header="Type Station" [(visible)]="display">
+<p-dialog header="Type Station" [(visible)]="display" [style]="{'width':'400px'}">
   <div class="ui-g">
     <div class="ui-g-4">Libelle</div>
     <div class="ui-g-4">
@@ -33,5 +33,4 @@
 
 </p-dialog>
 <p-contextMenu #cm [model]="items"></p-contextMenu>
-<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
-<p-toast></p-toast>
+

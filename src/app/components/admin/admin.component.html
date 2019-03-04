@@ -2,20 +2,17 @@
 
 
 <p-table [value]="admins" [contextMenu]="cm" [(contextMenuSelection)]="selectedAdmin">
+  <ng-template pTemplate="caption">
+    Admin
+  </ng-template>
 
   <ng-template pTemplate="header">
-    <tr>
-      <th>Admin</th>
 
-    </tr>
     <tr>
       <th>matricule</th>
       <th>Nom</th>
       <th>Email</th>
       <th>Login</th>
-      <th>Password</th>
-      <th>Code</th>
-
       <th>SuperAdmin</th>
     </tr>
   </ng-template>
@@ -30,10 +27,9 @@
       <td>{{type.login}}</td>
 
 
-      <td>{{type.password}}</td>
 
 
-      <td>{{type.code}}</td>
+
 
 
       <td>{{type.superAdmin}}</td>
@@ -42,48 +38,33 @@
   </ng-template>
 </p-table>
 
-<p-dialog header="Admin" [(visible)]="display" [style]="{'width':'400px','height':'700px'}">
+<p-dialog header="Admin" [(visible)]="display" [style]="{'width':'400px'}">
 
   <div class="ui-g">
     <tr>
     <td class="ui-g-4">Nom</td>
     <td class="ui-g-4">
-      <input required [(ngModel)]="admin.nom" #nom="ngModel">
+      <input pInputText type="text" required [(ngModel)]="admin.nom" #nom="ngModel">
     </td>
     </tr>
     <tr>
     <td class="ui-g-4">Email</td>
     <td class="ui-g-4">
-      <input required [(ngModel)]="admin.email" #nom="ngModel">
+      <input pInputText type="text" required [(ngModel)]="admin.email" #nom="ngModel">
     </td>
     </tr>
     <tr>
     <td class="ui-g-4">Login</td>
     <td class="ui-g-4">
-      <input required [(ngModel)]="admin.login" #nom="ngModel">
+      <input pInputText type="text" required [(ngModel)]="admin.login" #nom="ngModel">
     </td>
     </tr>
-    <tr>
-    <td class="ui-g-4">Password</td>
-    <td class="ui-g-4">
-      <input type="password" pPassword required [(ngModel)]="admin.password"  #nom="ngModel"/>
-    </td>
-      <td>
+    
 
-
-
-      </td>
-    </tr>
-    <tr>
-    <td class="ui-g-4">Code</td>
-    <td class="ui-g-4">
-      <input required [(ngModel)]="admin.code" #nom="ngModel">
-    </td>
-     </tr>
     <tr>
     <td class="ui-g-4">Matricule</td>
     <td class="ui-g-4">
-      <input required [(ngModel)]="admin.matricule" #nom="ngModel">
+      <input pInputText type="text" required [(ngModel)]="admin.matricule" #nom="ngModel">
     </td>
     </tr>
 
@@ -103,5 +84,5 @@
 
 
 </p-dialog>
-<p-contextMenu #cm [model]="items"></p-contextMenu>
+<p-contextMenu #cm [model]="items" ></p-contextMenu>
 

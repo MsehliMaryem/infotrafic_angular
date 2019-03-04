@@ -12,7 +12,8 @@ import {
   DialogModule,
   DropdownModule,
   GMapModule,
-  PasswordModule, ToggleButtonModule
+  PasswordModule,
+  ToggleButtonModule
 
 } from 'primeng/primeng';
 import {ConfirmationService, MessageService} from 'primeng/api';
@@ -26,6 +27,7 @@ import {FooterComponent} from './components/templates/footer/footer.component';
 import { TypeAlerteComponent } from './components/type-alerte/type-alerte.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AbonneComponent } from './components/abonne/abonne.component';
+import {ShowHidePasswordModule} from 'ngx-show-hide-password';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,7 @@ import { AbonneComponent } from './components/abonne/abonne.component';
     ToastModule,
     DialogModule,
     GMapModule,
-
+    ShowHidePasswordModule
 
 
   ],

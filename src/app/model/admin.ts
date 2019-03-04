@@ -1,11 +1,8 @@
-export class Admin {
-  id :number ;
-  nom : string;
-  email : string;
-  login : string;
-  password :string;
-  code : string;
-  matricule :string ;
+import {Personne} from './personne';
+
+export class Admin extends Personne{
+
+   matricule :string ;
   superAdmin : boolean ;
 
 }

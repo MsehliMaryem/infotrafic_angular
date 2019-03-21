@@ -11,7 +11,7 @@ import {
   ContextMenuModule,
   DialogModule,
   DropdownModule,
-  GMapModule,
+  GMapModule, MessageModule,
   PasswordModule,
   ToggleButtonModule
 
@@ -20,14 +20,16 @@ import {ConfirmationService, MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {FormsModule} from '@angular/forms';
 import { StationComponent } from './components/station/station.component';
-import {TemplateComponent} from './components/templates/template/template.component';
-import {MenuComponent} from './components/templates/menu/menu.component';
-import {HeaderComponent} from './components/templates/header/header.component';
-import {FooterComponent} from './components/templates/footer/footer.component';
+import {TemplateComponent} from './templates/template/template.component';
+import {MenuComponent} from './templates/menu/menu.component';
+import {HeaderComponent} from './templates/header/header.component';
+import {FooterComponent} from './templates/footer/footer.component';
 import { TypeAlerteComponent } from './components/type-alerte/type-alerte.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AbonneComponent } from './components/abonne/abonne.component';
 import {ShowHidePasswordModule} from 'ngx-show-hide-password';
+import { ContentComponent } from './templates/content/content.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {ShowHidePasswordModule} from 'ngx-show-hide-password';
     FooterComponent,
     TypeAlerteComponent,
     AdminComponent,
-    AbonneComponent
+    AbonneComponent,
+    ContentComponent,
+    LoginComponent
   ],
   imports: [
     PasswordModule,
@@ -57,7 +61,8 @@ import {ShowHidePasswordModule} from 'ngx-show-hide-password';
     ToastModule,
     DialogModule,
     GMapModule,
-    ShowHidePasswordModule
+    ShowHidePasswordModule,
+    MessageModule
 
 
   ],

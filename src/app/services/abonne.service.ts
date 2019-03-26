@@ -8,7 +8,7 @@ import {Abonne} from '../model/abonne';
   providedIn: 'root'
 })
 export class AbonneService {
-  private baseUrl  = "http://localhost:9090/abonne";
+  private baseUrl  = "http://localhost:9090/abonnee";
   constructor(private  httpClient: HttpClient) { }
   public getAllAbonne() : Observable<Abonne[]>{
 

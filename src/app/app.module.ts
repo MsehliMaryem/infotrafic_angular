@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TypeStationComponent } from './components/type-station/type-station.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
 import {
@@ -11,7 +11,7 @@ import {
   ContextMenuModule,
   DialogModule,
   DropdownModule,
-  GMapModule, MessageModule,
+  GMapModule, KeyFilterModule, MessageModule, MessagesModule,
   PasswordModule,
   ToggleButtonModule
 
@@ -30,6 +30,9 @@ import { AbonneComponent } from './components/abonne/abonne.component';
 import {ShowHidePasswordModule} from 'ngx-show-hide-password';
 import { ContentComponent } from './templates/content/content.component';
 import { LoginComponent } from './components/login/login.component';
+import { NumeroUrgenceComponent } from './components/numero-urgence/numero-urgence.component';
+import { ChauffeurTaxiComponent } from './components/chauffeur-taxi/chauffeur-taxi.component';
+import {JwtInterceptorService} from './services/jwt-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { LoginComponent } from './components/login/login.component';
     AdminComponent,
     AbonneComponent,
     ContentComponent,
-    LoginComponent
+    LoginComponent,
+    NumeroUrgenceComponent,
+    ChauffeurTaxiComponent
   ],
   imports: [
     PasswordModule,
@@ -62,11 +67,14 @@ import { LoginComponent } from './components/login/login.component';
     DialogModule,
     GMapModule,
     ShowHidePasswordModule,
-    MessageModule
+    MessageModule,
+    MessagesModule,
+    KeyFilterModule
 
 
   ],
-  providers: [ConfirmationService,MessageService],
+  providers: [ConfirmationService,MessageService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Admin} from '../model/admin';
 import {StringResponse} from '../model/string-response';
@@ -13,7 +13,8 @@ export class AdminService {
 
 
   public getAllAdmin() : Observable<Admin[]>{
-    return this.httpClient.get<Admin[]>(this.baseUrl) ;
+
+    return this.httpClient.get<Admin[]>(this.baseUrl ) ;
   }
 
   public deleteAdmin(code:number): Observable<StringResponse>{

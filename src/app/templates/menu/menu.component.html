@@ -13,40 +13,45 @@
             <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
             <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
             <li class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+            <li><a class="dropdown-item" (click)="logout()">Déconnexion</a></li>
           </ul>
         </div>
-        <div class="logo-element">
-          IN+
+        <div class="logo-element">InfoTrafic
         </div>
       </li>
       <li>
-        <a ><i class="fa fa-coffee"></i> <span class="nav-label">Gestion des stations</span> <span class="fa arrow"></span></a>
+        <a ><i class="fa fa-home"></i> <span class="nav-label">Gestion des stations</span> <span class="fa arrow"></span></a>
         <ul class="nav nav-second-level collapse" aria-expanded="false">
           <li><a routerLink="/station">Station Service</a></li>
           <li><a routerLink="/typeStation">Type Station</a></li>
 
         </ul>
+
+
+</li>
+      <li>
+        <a ><i class="fa fa-user-circle"></i> <span class="nav-label">Gestion des comptes</span> <span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse" aria-expanded="false">
+          <li><a routerLink="/admin">Admin</a></li>
+          <li><a routerLink="/abonne">Abonné</a></li>
+          <li><a routerLink="/chauffeurTaxi">Chauffeur taxi</a></li>
+
+</ul>
+        <li>
+      <a><i class="fa fa-exclamation-triangle"></i> <span class="nav-label">Gestion des alertes</span> <span class="fa arrow"></span></a>
+      <ul class="nav nav-second-level collapse" aria-expanded="false">
+        <li><a routerLink="*">Alerte</a></li>
+        <li><a routerLink="/typeAlerte">Type Alerte</a></li>
+      </ul>
+
+
       </li>
+      <li>
+        <a routerLink="/numeroUrgence"><i class="fa fa-phone-square"></i> <span class="nav-label">Numéro d'urgence</span> </a>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </li>
     </ul>
 
   </div>

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.ui-contextmenu-selected{
+
+  background-color: #1AB394 !important;
+}
+.ui-dialog-resizable .ui-dialog-content {
+  overflow: hidden !important;
+}

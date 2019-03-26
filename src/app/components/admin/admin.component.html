@@ -1,5 +1,5 @@
-<button type="button" (click)="showDialog()" pButton icon="pi pi-plus-circle" label="Ajouter"></button>
-
+<button style="float:right" type="button" (click)="showDialog()" pButton icon="pi pi-plus-circle" label="Ajouter"></button>
+<br><br><br>
 
 <p-table [value]="admins" [contextMenu]="cm" [(contextMenuSelection)]="selectedAdmin">
   <ng-template pTemplate="caption">
@@ -9,125 +9,135 @@
   <ng-template pTemplate="header">
 
     <tr>
-
+      <th>Matricule</th>
       <th>Nom</th>
       <th>prenom</th>
       <th>Email</th>
       <th>Telephone</th>
       <th>Login</th>
-      <th>Matricule</th>
+
       <th>SuperAdmin</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-type>
     <tr [pContextMenuRow]="type">
-
+      <td>{{type.matricule}}</td>
       <td>{{type.nom}}</td>
       <td>{{type.prenom}}</td>
       <td>{{type.email}}</td>
       <td>{{type.telephone}}</td>
       <td>{{type.login}}</td>
-      <td>{{type.matricule}}</td>
-      <td>{{type.superAdmin}}</td>
 
+      <td>
+      <p-toggleButton onLabel="Oui" offLabel="Non" disabled="true" [ngModel]="type.superAdmin"></p-toggleButton>
+      </td>
     </tr>
   </ng-template>
 </p-table>
 
-<p-dialog header="Admin" [(visible)]="display" [style]="{'width':'600px'}">
-  <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
-    <div class="ui-grid-row-col">
+<p-dialog header="Admin" [(visible)]="display" [style]="{'width':'700px'}">
 
+  <div class="form-group row">
+    <label class="col-lg-2 col-form-label">Matricule</label>
 
-      <div class="ui-grid-col-2">Nom</div>
-      <div class="ui-grid-col-4">
-        <input pInputText type="text" class="ng-dirty ng-invalid" required [(ngModel)]="admin.nom" #nom="ngModel">
-      </div>
+    <div class="col-lg-6">
 
-      <div class="ui-grid-col-6">
-        <p-message severity="error" text="Nom  réquis"
-                   *ngIf="nom.invalid && (nom.dirty || nom.touched)"></p-message>
-      </div>
-
-    <div class="ui-grid-row"></div>
-      <div class="ui-grid-col-2">prénom</div>
-    <div class="ui-grid-col-4">
-      <input pInputText type="text" class="ng-dirty ng-invalid" required [(ngModel)]="admin.prenom" #prenom="ngModel">
-    </div>
-      <div class="ui-grid-col-6">
-        <p-message severity="error" text="Prénom réquis"
-                   *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)"></p-message>
-      </div>
-
-      <div class="ui-grid-row"></div>
-      <div class="ui-grid-col-2">Email</div>
-      <div class="ui-grid-col-4">
-        <input pInputText type="text" class="ng-dirty ng-invalid" required [(ngModel)]="admin.email" #email="ngModel">
-      </div>
-      <div class="ui-grid-col-6">
-        <p-message severity="error" text="Email  réquis"
-                   *ngIf="email.invalid && (email.dirty || email.touched)"></p-message>
-      </div>
-
-
-      <div class="ui-grid-row"></div>
-      <div class="ui-grid-col-2">Telephone</div>
-      <div class="ui-grid-col-4">
-        <input pInputText type="text" class="ng-dirty ng-invalid" required [(ngModel)]="admin.telephone" #telephone="ngModel">
-      </div>
-      <div class="ui-grid-col-6">
-        <p-message severity="error" text="telephone réquis"
-                   *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)"></p-message>
-      </div>
-
-      <div class="ui-grid-row"></div>
-      <div class="ui-grid-col-2">Login</div>
-      <div class="ui-grid-col-4">
-        <input pInputText type="text" class="ng-dirty ng-invalid" required [(ngModel)]="admin.login" #login="ngModel">
-      </div>
-      <div class="ui-grid-col-6">
-        <p-message severity="error" text="login réquis"
-                   *ngIf="login.invalid && (login.dirty || login.touched)"></p-message>
-      </div>
-
-      <div class="ui-grid-row"></div>
-      <div class="ui-grid-col-2">Password</div>
-      <div class="ui-grid-col-4">
-        <input pInputText type="password" pPassword [(ngModel)]="property" class="ng-dirty ng-invalid" required [(ngModel)]="admin.password" #password="ngModel">
-      </div>
-      <div class="ui-grid-col-6">
-        <p-message severity="error" text="login réquis"
-                   *ngIf="password.invalid && (password.dirty || password.touched)"></p-message>
-      </div>
-
-
-      <div class="ui-grid-row"></div>
-      <div class="ui-grid-col-2">Matricule</div>
-      <div class="ui-grid-col-4">
-        <input pInputText type="text" class="ng-dirty ng-invalid" required [(ngModel)]="admin.matricule" #matricule="ngModel">
-      </div>
-      <div class="ui-grid-col-6">
-        <p-message severity="error" text="Matricule réquis"
-                   *ngIf="matricule.invalid && (matricule.dirty || matricule.touched)"></p-message>
-      </div>
-
-
-      <div class="ui-grid-row"></div>
-      <div class="ui-grid-col-2">Super Admin</div>
-      <div class="ui-grid-col-4">
-      <p-toggleButton [(ngModel)]="admin.superAdmin"></p-toggleButton>
-      </div>
-
-
-
-    </div>
+      <input  class="form-control" type="text"  required [(ngModel)]="admin.matricule" #matricule="ngModel">
     </div>
 
+    <div class="col-lg-4">
+      <p-message severity="error" text="Matricule  réquis"
+                 *ngIf="matricule.invalid && (matricule.dirty || matricule.touched)"></p-message>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-lg-2 col-form-label">Nom</label>
+
+    <div class="col-lg-6">
+
+      <input  class="form-control" type="text"  required [(ngModel)]="admin.nom" #nom="ngModel">
+    </div>
+
+    <div class="col-lg-4">
+      <p-message severity="error" text="Nom  réquis"
+                 *ngIf="nom.invalid && (nom.dirty || nom.touched)"></p-message>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-lg-2 col-form-label">Prénom</label>
+
+    <div class="col-lg-6">
+
+      <input  class="form-control" type="text"  required [(ngModel)]="admin.prenom" #prenom="ngModel">
+    </div>
+
+    <div class="col-lg-4">
+      <p-message severity="error" text="Prénom  réquis"
+                 *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)"></p-message>
+    </div>
+  </div>
+
+  <div class="form-group row">
+  <label class="col-lg-2 col-form-label">Email</label>
+
+  <div class="col-lg-6">
+
+    <input  class="form-control" pKeyFilter="email" type="text" email  required [(ngModel)]="admin.email" #email="ngModel">
+  </div>
+
+  <div class="col-lg-4">
+    <p-message severity="error" [text]="email.errors['required']? 'Email  réquis': email.errors['email']? 'Email invalid' : '' "
+               *ngIf="email.invalid && (email.dirty || email.touched)"></p-message>
+  </div>
+</div>
+
+  <div class="form-group row">
+    <label class="col-lg-2 col-form-label">Teléphone</label>
+
+    <div class="col-lg-6">
+
+      <input  class="form-control" pKeyFilter="pint" minlength="8" maxlength="8" type="text"  required [(ngModel)]="admin.telephone" #telephone="ngModel">
+    </div>
+
+    <div class="col-lg-4">
+      <p-message severity="error"
+                 [text]="telephone.errors['required']? 'Teléphone  réquis': telephone.errors['minlength']? 'Numéro invalid' : '' "
+                 *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)"></p-message>
+    </div>
+  </div>
+
+  <div class="form-group row">
+  <label class="col-lg-2 col-form-label">Login</label>
+
+  <div class="col-lg-6">
+
+    <input  class="form-control" type="text"  required [(ngModel)]="admin.login" #login="ngModel">
+  </div>
+
+  <div class="col-lg-4">
+    <p-message severity="error" text="Login  réquis"
+               *ngIf="login.invalid && (login.dirty || login.touched)"></p-message>
+  </div>
+</div>
+
+
+
+  <div class="form-group row">
+    <label class="col-lg-2 col-form-label">Super Admin</label>
+
+    <div class="col-lg-6">
+      <p-toggleButton onLabel="Oui" offLabel="Non" [(ngModel)]="admin.superAdmin"></p-toggleButton>
+
+    </div>
+  </div>
 
   <p-footer>
 
-    <button *ngIf="!updated" pButton label="Ajouter" (click)="ajouter()"
-            [disabled]="nom.invalid || matricule.invalid"></button>
+    <button  *ngIf="!updated" pButton label="Ajouter" (click)="ajouter()"
+            [disabled]="nom.invalid || matricule.invalid || prenom.invalid || login.invalid
+            || email.invalid || telephone.invalid" ></button>
     <button *ngIf="updated" pButton label="Modifier" (click)="modifier()" [disabled]="!nom.valid"></button>
     <button pButton label="Annuler" (click)="display=false"></button>
   </p-footer>

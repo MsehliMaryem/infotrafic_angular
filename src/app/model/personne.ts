@@ -7,4 +7,5 @@ export  class Personne {
   login: string;
   password: string;
   code : string;
+  enabled: boolean;
 }

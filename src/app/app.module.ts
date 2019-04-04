@@ -11,7 +11,7 @@ import {
   ContextMenuModule,
   DialogModule,
   DropdownModule,
-  GMapModule, KeyFilterModule, MessageModule, MessagesModule,
+  GMapModule, InputSwitchModule, KeyFilterModule, MessageModule, MessagesModule,
   PasswordModule,
   ToggleButtonModule
 
@@ -33,6 +33,10 @@ import { LoginComponent } from './components/login/login.component';
 import { NumeroUrgenceComponent } from './components/numero-urgence/numero-urgence.component';
 import { ChauffeurTaxiComponent } from './components/chauffeur-taxi/chauffeur-taxi.component';
 import {JwtInterceptorService} from './services/jwt-interceptor.service';
+import {AlerteComponent} from './components/alerte/alerte.component';
+import { DateTimeFormatPipePipe } from './utils/date-time-format-pipe.pipe';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +53,10 @@ import {JwtInterceptorService} from './services/jwt-interceptor.service';
     ContentComponent,
     LoginComponent,
     NumeroUrgenceComponent,
-    ChauffeurTaxiComponent
+    ChauffeurTaxiComponent,
+    AlerteComponent,
+    DateTimeFormatPipePipe,
+    ChangePasswordComponent
   ],
   imports: [
     PasswordModule,
@@ -69,7 +76,8 @@ import {JwtInterceptorService} from './services/jwt-interceptor.service';
     ShowHidePasswordModule,
     MessageModule,
     MessagesModule,
-    KeyFilterModule
+    KeyFilterModule,
+    InputSwitchModule
 
 
   ],

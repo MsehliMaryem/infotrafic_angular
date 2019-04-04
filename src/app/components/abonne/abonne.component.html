@@ -12,7 +12,7 @@
       <th>Email</th>
       <th>Telephone</th>
       <th>Login</th>
-
+      <th>Etat</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-type>
@@ -23,7 +23,9 @@
       <td>{{type.email}}</td>
       <td>{{type.telephone}}</td>
       <td>{{type.login}}</td>
-
+      <td>
+        <p-inputSwitch (onChange)="changeEtat($event)" [(ngModel)]="type.enabled"></p-inputSwitch>
+      </td>
 
     </tr>
   </ng-template>

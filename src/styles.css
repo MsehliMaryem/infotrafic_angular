@@ -6,3 +6,11 @@
 .ui-dialog-resizable .ui-dialog-content {
   overflow: hidden !important;
 }
+.ui-contextmenu-selected{
+
+  background-color: #1AB394 !important;
+}
+
+.gray-bg, .bg-muted {
+  background-image: radial-gradient(circle at top left, #f3f3f4, #1AB394) ;
+}

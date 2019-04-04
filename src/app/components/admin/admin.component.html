@@ -1,7 +1,7 @@
-<button style="float:right" type="button" (click)="showDialog()" pButton icon="pi pi-plus-circle" label="Ajouter"></button>
+<button style="float:right" type="button" (click)="showDialog()" pButton icon="pi pi-plus-circle" label="Ajouter" [disabled]="!isSuperAdmin"></button>
 <br><br><br>
 
-<p-table [value]="admins" [contextMenu]="cm" [(contextMenuSelection)]="selectedAdmin">
+<p-table [value]="admins" [contextMenu]="isSuperAdmin ? cm: '' " [(contextMenuSelection)]="selectedAdmin">
   <ng-template pTemplate="caption">
     Admin
   </ng-template>
@@ -15,7 +15,7 @@
       <th>Email</th>
       <th>Telephone</th>
       <th>Login</th>
-
+      <th>Etat</th>
       <th>SuperAdmin</th>
     </tr>
   </ng-template>
@@ -27,7 +27,9 @@
       <td>{{type.email}}</td>
       <td>{{type.telephone}}</td>
       <td>{{type.login}}</td>
-
+<td>
+      <p-inputSwitch [disabled]="!isSuperAdmin" (onChange)="changeEtat($event)" [(ngModel)]="type.enabled"></p-inputSwitch>
+    </td>
       <td>
       <p-toggleButton onLabel="Oui" offLabel="Non" disabled="true" [ngModel]="type.superAdmin"></p-toggleButton>
       </td>
@@ -146,7 +148,7 @@
 </p-dialog>
 
 
-<p-contextMenu #cm [model]="items"></p-contextMenu>
+<p-contextMenu  #cm [model]="items"></p-contextMenu>
 
 
 

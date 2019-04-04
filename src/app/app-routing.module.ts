@@ -11,6 +11,8 @@ import {LoginComponent} from './components/login/login.component';
 import {ChauffeurTaxiComponent} from './components/chauffeur-taxi/chauffeur-taxi.component';
 import {AuthenticationGuardService} from './services/authentication-guard.service';
 import {LoginGuardService} from './services/login-guard.service';
+import {AlerteComponent} from './components/alerte/alerte.component';
+import {ChangePasswordComponent} from './components/change-password/change-password.component';
 
 const routes: Routes = [
     {path:'login', component: LoginComponent,canActivate: [LoginGuardService]},
@@ -23,7 +25,9 @@ const routes: Routes = [
       {path:'admin', component: AdminComponent},
       {path:'abonne', component: AbonneComponent},
       {path:'numeroUrgence', component: NumeroUrgenceComponent},
-      {path:'chauffeurTaxi', component: ChauffeurTaxiComponent}
+      {path:'chauffeurTaxi', component: ChauffeurTaxiComponent},
+      {path:'alerte', component: AlerteComponent},
+      {path:'pwd', component: ChangePasswordComponent}
     ]}
 
   ];

@@ -8,8 +8,10 @@ export class Alerte {
   idAlerte :number;
   dateAlerte : Date ;
   abonne: Abonne;
-  admin:Admin;
-  typeAlerte : TypeAlerte ;
+
+  typeAlerte: TypeAlerte ;
   enabled: boolean;
+  latitude: number;
+  longitude: number;
   signalAlertes: SignalAlerte[];
 }

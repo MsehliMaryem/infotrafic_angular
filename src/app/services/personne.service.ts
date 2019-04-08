@@ -10,7 +10,7 @@ export class PersonneService {
   private baseUrl  = "http://localhost:9090/personne";
   constructor(private  httpClient: HttpClient) { }
 
-  public activate(pers: Personne): Observable<any> {
+  public activate(pers: any): Observable<any> {
     return this.httpClient.put(this.baseUrl, pers);
   }
 

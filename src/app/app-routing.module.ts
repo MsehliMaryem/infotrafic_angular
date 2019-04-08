@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {TypeStationComponent} from './components/type-station/type-station.component';
 import {StationComponent} from './components/station/station.component';
 import {TypeAlerteComponent} from './components/type-alerte/type-alerte.component';
@@ -13,27 +13,32 @@ import {AuthenticationGuardService} from './services/authentication-guard.servic
 import {LoginGuardService} from './services/login-guard.service';
 import {AlerteComponent} from './components/alerte/alerte.component';
 import {ChangePasswordComponent} from './components/change-password/change-password.component';
+import {ForgotPasswordComponent} from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
-    {path:'login', component: LoginComponent,canActivate: [LoginGuardService]},
+  {path: 'login', component: LoginComponent, canActivate: [LoginGuardService]},
+  {path: 'forgot', component: ForgotPasswordComponent},
 
-  {path: '', component: TemplateComponent,
+  {
+    path: '', component: TemplateComponent,
     canActivate: [AuthenticationGuardService], children: [
-      {path : 'typeStation', component: TypeStationComponent },
-      {path : 'station', component: StationComponent },
-      {path:'typeAlerte', component: TypeAlerteComponent},
-      {path:'admin', component: AdminComponent},
-      {path:'abonne', component: AbonneComponent},
-      {path:'numeroUrgence', component: NumeroUrgenceComponent},
-      {path:'chauffeurTaxi', component: ChauffeurTaxiComponent},
-      {path:'alerte', component: AlerteComponent},
-      {path:'pwd', component: ChangePasswordComponent}
-    ]}
+      {path: 'typeStation', component: TypeStationComponent},
+      {path: 'station', component: StationComponent},
+      {path: 'typeAlerte', component: TypeAlerteComponent},
+      {path: 'admin', component: AdminComponent},
+      {path: 'abonne', component: AbonneComponent},
+      {path: 'numeroUrgence', component: NumeroUrgenceComponent},
+      {path: 'chauffeurTaxi', component: ChauffeurTaxiComponent},
+      {path: 'alerte', component: AlerteComponent},
+      {path: 'pwd', component: ChangePasswordComponent}
+    ]
+  }
 
-  ];
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

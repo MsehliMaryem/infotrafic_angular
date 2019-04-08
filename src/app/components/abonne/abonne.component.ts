@@ -32,8 +32,9 @@ export class AbonneComponent implements OnInit {
 
   }
 
-  changeEtat(e) {
+  changeEtat(e: any, adm: any){
     const isChecked = e.checked;
+    this.abonne = adm;
     this.abonne.enabled = isChecked;
 
     this.personneService.activate(this.abonne).subscribe(data => {

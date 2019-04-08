@@ -1,64 +1,76 @@
-<p-table [value]="alertes"  >
-  <ng-template pTemplate="caption">
-    Alertes
-  </ng-template>
+<p-gmap [options]="options" [style]="{'width':'100%','height':'600px'}"
+        [overlays]="overlays" (onOverlayClick)="handleOverlayClick($event)"></p-gmap>
+  <p-dialog header="Signal" [(visible)]="display" [style]="{width: '600px'}">
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Date</label>
 
-  <ng-template pTemplate="header">
+      <div class="col-lg-6">
 
-    <tr>
-      <th>Date</th>
-      <th>Type Alerte</th>
-      <th>Abonnée</th>
-      <th>Admin</th>
-      <th>Signal</th>
-
-      <th width="8%" >Opérations</th>
-
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-type>
-    <tr >
-      <td>{{type.dateAlerte | dateTimeFormatPipe}}</td>
-      <td>{{type.typeAlerte.nom}}</td>
-      <td>{{type.abonne.nom + ' '+type.abonne.prenom}}</td>
-      <td>{{type.admin.nom + ' '+type.admin.prenom}}</td>
-      <td>{{type.signalAlertes.length}}</td>
-
-<td style="text-align: center">
-  <button pButton icon="pi pi-eye" (click)="showSignal(type)"></button>
-</td>
-    </tr>
-  </ng-template>
-</p-table>
+        <input  class="form-control" type="text"  readonly value="{{alerte.dateAlerte | dateTimeFormatPipe}}" >
+      </div>
 
 
-<p-dialog header="Signal" [(visible)]="display" [style]="{width: '600px'}">
-  <p-table [value]="alerte.signalAlertes"  >
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Abonnée</label>
+
+      <div class="col-lg-6">
+
+        <input  class="form-control" type="text"  readonly value="{{alerte.abonne?.nom + ' '+ alerte.abonne?.prenom}}" >
+      </div>
 
 
-    <ng-template pTemplate="header">
+    </div>
 
-      <tr>
-        <th width="25%">Date</th>
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Type alerte</label>
 
-        <th>Abonnée</th>
-        <th>Cause</th>
+      <div class="col-lg-6">
 
-
-
-
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-type>
-      <tr >
-        <td>{{type.dateSignal | dateTimeFormatPipe}}</td>
-
-        <td>{{type.abonne.nom + ' '+type.abonne.prenom}}</td>
-
-        <td>{{type.cause}}</td>
+        <input  class="form-control" type="text"  readonly value="{{alerte.typeAlerte?.nom}}" >
+      </div>
 
 
-      </tr>
-    </ng-template>
-  </p-table>
-</p-dialog>
+    </div>
+
+
+    <div class="form-group row">
+      <label class="col-lg-3 col-form-label">Active</label>
+
+      <div class="col-lg-6">
+        <p-inputSwitch  (onChange)="changeEtat($event,type)" [(ngModel)]="alerte.enabled"></p-inputSwitch>
+
+      </div>
+
+
+    </div>
+
+    <p-table [value]="alerte.signalAlertes"  >
+
+
+      <ng-template pTemplate="header">
+
+        <tr>
+          <th width="25%">Date</th>
+
+          <th>Abonnée</th>
+          <th>Cause</th>
+
+
+
+
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-type>
+        <tr >
+          <td>{{type.dateSignal | dateTimeFormatPipe}}</td>
+
+          <td>{{type.abonne.nom + ' '+type.abonne.prenom}}</td>
+
+          <td>{{type.cause}}</td>
+
+
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-dialog>

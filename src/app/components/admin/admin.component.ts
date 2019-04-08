@@ -7,6 +7,7 @@ import {PersonneService} from '../../services/personne.service';
 import {AuthenticationService} from '../../services/authentication.service';
 
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -131,10 +132,10 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  edit(type: Admin) {
+  edit(adm: Admin) {
     this.display = true;
     this.updated = true;
-    Object.assign(this.admin, type);
+    Object.assign(this.admin, adm);
 
   }
 
@@ -143,8 +144,9 @@ export class AdminComponent implements OnInit {
     this.updated = false;
   }
 
-    changeEtat(e){
+    changeEtat(e: any, adm: any){
       const isChecked = e.checked;
+     this.admin= adm;
      this.admin.enabled = isChecked;
 
       this.personneService.activate(this.admin).subscribe(data => {

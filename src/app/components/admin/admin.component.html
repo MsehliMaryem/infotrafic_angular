@@ -28,7 +28,7 @@
       <td>{{type.telephone}}</td>
       <td>{{type.login}}</td>
 <td>
-      <p-inputSwitch [disabled]="!isSuperAdmin" (onChange)="changeEtat($event)" [(ngModel)]="type.enabled"></p-inputSwitch>
+      <p-inputSwitch [disabled]="!isSuperAdmin" (onChange)="changeEtat($event,type)" [(ngModel)]="type.enabled"></p-inputSwitch>
     </td>
       <td>
       <p-toggleButton onLabel="Oui" offLabel="Non" disabled="true" [ngModel]="type.superAdmin"></p-toggleButton>

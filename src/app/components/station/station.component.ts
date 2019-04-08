@@ -8,6 +8,7 @@ import {ConfirmationService, MessageService} from 'primeng/api';
 import {StringResponse} from '../../model/string-response';
 import {TypeStation} from '../../model/type-station';
 
+
 @Component({
   selector: 'app-station',
   templateUrl: './station.component.html',
@@ -20,7 +21,9 @@ export class StationComponent implements OnInit {
   private typeStations: TypeStation[];
   private stations: Station[];
   private selectedType: TypeStation;
+  options: any;
 
+  overlays: any[] = new Array();
 
   private stringResponse: StringResponse = new StringResponse();
 
@@ -30,9 +33,9 @@ export class StationComponent implements OnInit {
               private confirmationService: ConfirmationService) {
   }
 
-  options: any;
 
-  overlays: any[] = new Array();
+
+
 
   ngOnInit() {
     this.options = {

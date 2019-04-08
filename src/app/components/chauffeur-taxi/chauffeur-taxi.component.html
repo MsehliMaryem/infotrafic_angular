@@ -13,6 +13,7 @@
       <th>Telephone</th>
       <th>Login</th>
       <th>Numéro Permis</th>
+      <th>Etat</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-type>
@@ -24,7 +25,9 @@
       <td>{{type.telephone}}</td>
       <td>{{type.login}}</td>
       <td>{{type.numPermis}}</td>
-
+      <td>
+        <p-inputSwitch (onChange)="changeEtat($event,type)" [(ngModel)]="type.enabled"></p-inputSwitch>
+      </td>
 
     </tr>
   </ng-template>

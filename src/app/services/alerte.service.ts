@@ -13,4 +13,8 @@ export class AlerteService {
 
     return this.httpClient.get<Alerte[]>(this.baseUrl);
   }
+
+  activate(alerte: Alerte): Observable<any> {
+    return this.httpClient.patch(this.baseUrl, alerte);
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {StringResponse} from '../../model/string-response';
 
 @Component({
   selector: 'app-forgot-password',
@@ -6,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
+  stringResponse: StringResponse;
 
-  email: string;
-  constructor() { }
+  constructor(private confirmationService: ConfirmationService,
+              private messageService: MessageService) {
+  }
 
   ngOnInit() {
   }

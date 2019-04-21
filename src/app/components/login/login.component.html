@@ -8,7 +8,7 @@
       <h5 class="logo-name">INfoTrafic</h5>
     </div>
 
-    <h3>Welcome to Infotrafic</h3>
+    <h3>Bienvenue à Infotrafic</h3>
 
     <p>Connectez-vous</p>
 
@@ -19,7 +19,7 @@
         <button type="button" class="btn btn-primary">
           <span class="fa fa-user"></span>
         </button>
-        <input [(ngModel)]="admin.login" type="text" class="form-control" placeholder="Username" required>
+        <input [(ngModel)]="admin.login" type="text" class="form-control" placeholder="nom de l'administrateur" required>
         </span>
 
       </div>
@@ -28,13 +28,13 @@
            <button type="button" class="btn btn-primary">
              <span class="fa fa-lock"></span>
            </button>
-        <input type="password" [(ngModel)]="admin.password" class="form-control" placeholder="Password" required>
+        <input type="password" [(ngModel)]="admin.password" class="form-control" placeholder="mot de passe" required>
          </span>
       </div>
-      <button type="submit" class="btn btn-primary block full-width m-b" (click)="authentifier()">Login</button>
+      <button type="submit" class="btn btn-primary block full-width m-b" (click)="authentifier()">connexion</button>
 
 
-      <a class="btn btn-sm btn-white btn-block" routerLink="/forgot">Create an account</a>
+      <a class="btn btn-sm btn-white btn-block" routerLink="/forgot">Récupérer votre compte</a>
 
     </div>
 

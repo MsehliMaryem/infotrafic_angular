@@ -34,7 +34,7 @@ import { NumeroUrgenceComponent } from './components/numero-urgence/numero-urgen
 import { ChauffeurTaxiComponent } from './components/chauffeur-taxi/chauffeur-taxi.component';
 import {JwtInterceptorService} from './services/jwt-interceptor.service';
 import {AlerteComponent} from './components/alerte/alerte.component';
-import { DateTimeFormatPipePipe } from './utils/date-time-format.pipe';
+import { DateTimeFormatPipe } from './utils/date-time-format.pipe';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
@@ -56,7 +56,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     NumeroUrgenceComponent,
     ChauffeurTaxiComponent,
     AlerteComponent,
-    DateTimeFormatPipePipe,
+    DateTimeFormatPipe,
     ChangePasswordComponent,
     ForgotPasswordComponent
   ],

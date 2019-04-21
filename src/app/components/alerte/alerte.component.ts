@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MessageService} from 'primeng/api';
 import {Alerte} from '../../model/alerte';
 import {AlerteService} from '../../services/alerte.service';
-
+declare const google: any;
 @Component({
   selector: 'app-alerte',
   templateUrl: './alerte.component.html',

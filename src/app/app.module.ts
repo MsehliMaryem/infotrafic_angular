@@ -37,6 +37,7 @@ import {AlerteComponent} from './components/alerte/alerte.component';
 import { DateTimeFormatPipe } from './utils/date-time-format.pipe';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ChangeForgotPasswordComponent } from './components/change-forgot-password/change-forgot-password.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     AlerteComponent,
     DateTimeFormatPipe,
     ChangePasswordComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ChangeForgotPasswordComponent
   ],
   imports: [
     PasswordModule,

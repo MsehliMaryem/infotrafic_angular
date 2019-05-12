@@ -14,11 +14,12 @@ import {LoginGuardService} from './services/login-guard.service';
 import {AlerteComponent} from './components/alerte/alerte.component';
 import {ChangePasswordComponent} from './components/change-password/change-password.component';
 import {ForgotPasswordComponent} from './components/forgot-password/forgot-password.component';
+import {ChangeForgotPasswordComponent} from './components/change-forgot-password/change-forgot-password.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [LoginGuardService]},
   {path: 'forgot', component: ForgotPasswordComponent},
-
+  {path: 'changePwd/:param', component: ChangeForgotPasswordComponent},
   {
     path: '', component: TemplateComponent,
     canActivate: [AuthenticationGuardService], children: [

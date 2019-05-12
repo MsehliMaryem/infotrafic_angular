@@ -19,7 +19,7 @@
         <button type="button" class="btn btn-primary">
           <span class="fa fa-user"></span>
         </button>
-        <input [(ngModel)]="admin.login" type="text" class="form-control" placeholder="nom de l'administrateur" required>
+        <input [(ngModel)]="admin.login" type="text" class="form-control" placeholder="Nom de l'administrateur" required>
         </span>
 
       </div>
@@ -28,7 +28,7 @@
            <button type="button" class="btn btn-primary">
              <span class="fa fa-lock"></span>
            </button>
-        <input type="password" [(ngModel)]="admin.password" class="form-control" placeholder="mot de passe" required>
+        <input type="password" [(ngModel)]="admin.password" class="form-control" placeholder="Mot de passe" required>
          </span>
       </div>
       <button type="submit" class="btn btn-primary block full-width m-b" (click)="authentifier()">connexion</button>
